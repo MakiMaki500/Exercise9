@@ -125,7 +125,7 @@ public class Monster {
                 return m;
             }
             else{
-                throw new MonsterNotFoundException();
+                throw new MonsterNotFoundException(m + " is not in the list of monsters.");
             }
         }
         return null;
