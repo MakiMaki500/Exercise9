@@ -118,14 +118,14 @@ public class Monster {
         }
     }
     
-    public static Monster selectMonster(String n) {
+    public static Monster selectMonster(String n) throws MonsterNotFoundException {
         boolean found = false;
         for(Monster m : monsterList){
             if(m.getName().equals(n)){
                 return m;
             }
             else{
-                
+                throw new MonsterNotFoundException();
             }
         }
         return null;
