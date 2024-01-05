@@ -8,6 +8,8 @@ package exercise9;
  *
  * @author josue
  */
-public class FullTeamException {
-    
+public class FullTeamException extends Exception {
+    public FullTeamException(String msg){
+        super(msg);
+    }
 }

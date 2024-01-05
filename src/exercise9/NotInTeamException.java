@@ -8,6 +8,8 @@ package exercise9;
  *
  * @author josue
  */
-public class NotInTeamException {
-    
+public class NotInTeamException extends Exception{
+    public NotInTeamException(String msg){
+        super(msg);
+    }
 }

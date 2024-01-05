@@ -8,6 +8,8 @@ package exercise9;
  *
  * @author josue
  */
-public class AlreadyCapturedException {
-    
+public class AlreadyCapturedException extends Exception {
+    public AlreadyCapturedException(String msg){
+        super(msg);
+    }
 }
