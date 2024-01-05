@@ -43,12 +43,22 @@ public class Trainer {
     public void battle(Trainer t){
         activeMonster.attack(t.getActiveMonster());
     }
-    public void sureCapture(Monster m){
+    public void sureCapture(Monster m) throws AlreadyCapturedException, FullTeamException{
+        if(team.contains(m)){
+            throw new AlreadyCapturedException(m + "is already in your team!");
+        }else if(team.size()==6){
+            throw new FullTeamException("Your team is already full!");
+        } else {    
         team.add(m);
         System.out.printf("%s was successfully captured.", m.getName());
+        }
     }
-    public void release(Monster m){
+    public void release(Monster m) throws NotInTeamException{
+        if(team.contains(m)){
+            throw new NotInTeamException(m + "is not in your team!");
+        }else{
         team.remove(m);
         System.out.printf("%s was released from the team.", m.getName());
+        }
     }
 }
