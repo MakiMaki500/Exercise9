@@ -45,7 +45,7 @@ public class Trainer {
     }
     public void sureCapture(Monster m) throws AlreadyCapturedException, FullTeamException{
         if(team.contains(m)){
-            throw new AlreadyCapturedException(m + "is already in your team!");
+            throw new AlreadyCapturedException(m + " is already in your team!");
         }else if(team.size()==6){
             throw new FullTeamException("Your team is already full!");
         } else {    
@@ -55,7 +55,7 @@ public class Trainer {
     }
     public void release(Monster m) throws NotInTeamException{
         if(team.contains(m)){
-            throw new NotInTeamException(m + "is not in your team!");
+            throw new NotInTeamException(m + " is not in your team!");
         }else{
         team.remove(m);
         System.out.printf("%s was released from the team.", m.getName());
